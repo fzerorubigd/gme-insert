@@ -65,15 +65,7 @@ token_height = res_height-z_border;
 
 card_width = z_width;
 card_height = z_height - player_height - res_height;
-card_depth = gme_card_depth;
-
-if (card_depth < 20 ) {
-    card_depth = 20;
-}
-
-if (card_depth > 58) {
-    card_depth = 58;
-}
+card_depth = z_depth;
 
 b_card_width_l = 75 - z_border_twice;
 b_card_height_l = 100 - z_border_twice;
@@ -85,13 +77,25 @@ lid_attr = [[ LID_SOLID_B, gme_lid_solid]];
 
 data =
 [
-    [   "player-x4",
+    [   "player_top_2x",
         [
             [ BOX_SIZE_XYZ, [player_width, player_height, player_depth] ],
             [ BOX_STACKABLE_B, false],
             [ BOX_LID,
                 lid_attr,
             ],   
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ player_width - z_border_twice, player_height - z_border_twice, player_depth - z_border ],]
+                ]
+            ], 
+        ]
+    ],
+    [   "player_bottom_2x",
+        [
+            [ BOX_SIZE_XYZ, [player_width, player_height, player_depth] ],
+            [ BOX_STACKABLE_B, true],
+            [ BOX_NO_LID_B, true],   
             [ BOX_COMPONENT,
                 [
                     [CMP_COMPARTMENT_SIZE_XYZ,  [ player_width - z_border_twice, player_height - z_border_twice, player_depth - z_border ],]
@@ -165,11 +169,9 @@ data =
      ],
     [   "token" ,[
          [ BOX_SIZE_XYZ, [res_width, res_height, res_depth] ],
-         [ BOX_STACKABLE_B, false],
-         [ BOX_LID,
-            lid_attr,
-          ],
-           [ BOX_COMPONENT,
+         [ BOX_STACKABLE_B, true],
+         [ BOX_NO_LID_B, true],
+         [ BOX_COMPONENT,
                 [
                     [CMP_COMPARTMENT_SIZE_XYZ,  [ (token_width*2), token_height - z_border, res_depth - z_border ] ],
                     [POSITION_XY,                           [0,0]],
@@ -321,6 +323,18 @@ data =
                     [POSITION_XY,               [CENTER,35]],
                 ]
             ],
+        ]
+    ],
+    [   "card_bottom_optional",
+        [
+            [ BOX_SIZE_XYZ, [card_width, card_height, card_depth] ],
+            [ BOX_STACKABLE_B, true],
+            [ BOX_NO_LID_B, true],   
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ card_width - z_border_twice, card_height - z_border_twice, card_depth - z_border ],]
+                ]
+            ], 
         ]
     ],
 ];
