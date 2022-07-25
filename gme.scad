@@ -332,7 +332,8 @@ data =
             [ BOX_NO_LID_B, true],   
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ card_width - z_border_twice, card_height - z_border_twice, card_depth - z_border ],]
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ card_width - z_border_twice, card_height - z_border_twice, card_depth - z_border ],],
+                    [ CMP_CUTOUT_BOTTOM_B, true ],
                 ]
             ], 
         ]
