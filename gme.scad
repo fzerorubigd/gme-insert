@@ -86,7 +86,14 @@ data =
             ],   
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ player_width - z_border_twice, player_height - z_border_twice, player_depth - z_border ],]
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ player_width / 3 - z_border, player_height - z_border_twice, player_depth - z_border ],],
+                    [POSITION_XY,                           [0,0]],
+                ]
+            ], 
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ (player_width *2 )/ 3-z_border_twice, player_height - z_border_twice, player_depth - z_border ],],
+                     [POSITION_XY,                           [ player_width / 3,0]],
                 ]
             ], 
         ]
@@ -98,7 +105,14 @@ data =
             [ BOX_NO_LID_B, true],   
             [ BOX_COMPONENT,
                 [
-                    [CMP_COMPARTMENT_SIZE_XYZ,  [ player_width - z_border_twice, player_height - z_border_twice, player_depth - z_border ],]
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ player_width / 3 - z_border, player_height - z_border_twice, player_depth - z_border ],],
+                    [POSITION_XY,                           [0,0]],
+                ]
+            ], 
+            [ BOX_COMPONENT,
+                [
+                    [CMP_COMPARTMENT_SIZE_XYZ,  [ (player_width *2 )/ 3-z_border_twice, player_height - z_border_twice, player_depth - z_border ],],
+                     [POSITION_XY,                           [ player_width / 3,0]],
                 ]
             ], 
         ]
